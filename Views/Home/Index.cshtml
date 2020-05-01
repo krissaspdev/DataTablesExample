@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <table id="myTable"></table>
+</div>
+<script>
+    $(document).ready(function () {
+
+        $('#myTable').DataTable({
+            serverSide: true,
+            ajax: "/Home/PageData",
+            type: 'POST',
+            columns: [
+                {
+                    name: 'name',
+                    data: "name",
+                    title: "Name",
+                    sortable: false,
+                    searchable: false
+                },
+                {
+                    name: 'position',
+                    data: "position",
+                    title: "Position",
+                    sortable: false,
+                    searchable: false
+                },
+                {
+                    name: 'office',
+                    data: "office",
+                    title: "Office",
+                    sortable: false,
+                    searchable: false
+                },
+                {
+                    name: 'extn',
+                    data: "extn",
+                    title: "Extn",
+                    sortable: false,
+                    searchable: false
+                },
+                {
+                    name: 'salary',
+                    data: "salary",
+                    title: "Salary",
+                    sortable: false,
+                    searchable: false
+                }
+            ]
+        });
+    });
+</script>

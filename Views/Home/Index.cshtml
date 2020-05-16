@@ -13,8 +13,13 @@
 
         $('#myTable').DataTable({
             serverSide: true,
-            ajax: "/Home/PageData",
-            type: 'POST',
+            processing: true,
+            //ajax: "/Home/PageData",
+            //type: 'POST',
+            ajax: {
+                url: "/Home/PageData",
+                type: "POST"
+            },
             columns: [
                 {
                     name: 'name',
